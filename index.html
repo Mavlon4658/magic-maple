@@ -1,1 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic-Maple</title>
+    <!-- Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Swiper CSS link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- CSS file -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
 
+        <!-- Header -->
+        <header class="position-absolute start-0 w-100 header">
+            <div class="d-flex align-items-start justify-content-between main_container">
+                <a href="#" class="header__logo">
+                    <img src="./images/header_logo.svg" alt="">
+                </a>
+                <ul class="d-flex align-items-center header__nav">
+                    <li>
+                        <a href="#" class="border_gradient">Главная</a>
+                    </li>
+                    <li>
+                        <a href="#" class="border_gradient active">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="#" class="border_gradient">О нас</a>
+                    </li>
+                </ul>
+                <div class="header__account">
+                    <div class="d-flex align-items-center justify-content-between header__account_top">
+                        <div class="account_ip">
+                            Ваш IP: <span>192.168.32.12</span>
+                        </div>
+                        <button>
+                            <img src="./images/flag_ru.png" alt="">
+                        </button>
+                    </div>
+                    <div class="d-flex align-items-center header__account_bottom">
+                        <button class="border_gradient auth_btn">
+                            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.49998 9.21615H4.49998C3.5696 9.21615 3.10442 9.21615 2.72589 9.33097C1.87362 9.58951 1.20667 10.2564 0.948139 11.1087C0.833313 11.4872 0.833313 11.9524 0.833313 12.8828M12.1666 12.8828V8.88281M10.1666 10.8828H14.1666M9.16665 3.88281C9.16665 5.53967 7.8235 6.88281 6.16665 6.88281C4.50979 6.88281 3.16665 5.53967 3.16665 3.88281C3.16665 2.22596 4.50979 0.882812 6.16665 0.882812C7.8235 0.882812 9.16665 2.22596 9.16665 3.88281Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Регистрация
+                        </button>
+                        <button class="border_gradient">
+                            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.5 0.882812H10.3C11.4201 0.882812 11.9802 0.882812 12.408 1.1008C12.7843 1.29255 13.0903 1.59851 13.282 1.97483C13.5 2.40265 13.5 2.96271 13.5 4.08281V9.68281C13.5 10.8029 13.5 11.363 13.282 11.7908C13.0903 12.1671 12.7843 12.4731 12.408 12.6648C11.9802 12.8828 11.4201 12.8828 10.3 12.8828H9.5M6.16667 3.54948L9.5 6.88281M9.5 6.88281L6.16667 10.2161M9.5 6.88281L1.5 6.88281" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Войти
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header end -->
+
+        <!-- Home -->
+        <section class="home">
+            <div class="d-flex flex-column align-items-end main_container">
+                <img src="./images/home_phone.png" class="home__phone_img" alt="">
+                <div class="d-flex flex-column align-items-start home__content">
+                    <h1 class="home__title">
+                        Самые современные технологии защиты ваших данных в глобальной сети 
+                    </h1>
+                    <div class="home__line"></div>
+                    <h2 class="home__subtitle">Максимальная защита от блокировок операторами связи</h2>
+                    <h3 class="d-flex align-items-center">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 11L10 13L14.5 8.5M8.2019 19.6009C8.52965 19.5575 8.86073 19.6464 9.12182 19.8475L10.3251 20.7708C10.7228 21.0764 11.2761 21.0764 11.6727 20.7708L12.9215 19.812C13.1548 19.6331 13.4492 19.5542 13.7403 19.5931L15.3024 19.7986C15.799 19.8642 16.2779 19.5875 16.4701 19.1242L17.0712 17.6709C17.1834 17.3987 17.3989 17.1832 17.6711 17.0709L19.1243 16.4698C19.5876 16.2787 19.8643 15.7988 19.7987 15.3021L19.601 13.7966C19.5576 13.4688 19.6465 13.1377 19.8476 12.8766L20.7709 11.6733C21.0764 11.2755 21.0764 10.7222 20.7709 10.3256L19.812 9.07672C19.6332 8.84339 19.5543 8.54896 19.5932 8.25785L19.7987 6.69568C19.8643 6.19902 19.5876 5.72015 19.1243 5.52793L17.6711 4.92684C17.3989 4.81462 17.1834 4.59907 17.0712 4.32685L16.4701 2.87356C16.279 2.41024 15.799 2.13358 15.3024 2.19913L13.7403 2.40468C13.4492 2.44468 13.1548 2.36579 12.9226 2.18802L11.6738 1.22916C11.2761 0.923613 10.7228 0.923613 10.3262 1.22916L9.07738 2.18802C8.84407 2.36579 8.54965 2.44468 8.25856 2.40691L6.69647 2.20136C6.19984 2.1358 5.721 2.41246 5.52879 2.87578L4.92884 4.32907C4.81552 4.60018 4.59998 4.81573 4.32889 4.92906L2.87568 5.52904C2.41238 5.72126 2.13574 6.20013 2.20129 6.69679L2.40683 8.25897C2.4446 8.55007 2.36572 8.8445 2.18796 9.07672L1.22915 10.3256C0.923617 10.7233 0.923617 11.2767 1.22915 11.6733L2.18796 12.9222C2.36683 13.1555 2.44571 13.4499 2.40683 13.741L2.20129 15.3032C2.13574 15.7999 2.41238 16.2787 2.87568 16.471L4.32889 17.0721C4.60109 17.1843 4.81663 17.3998 4.92884 17.672L5.5299 19.1253C5.721 19.5887 6.20096 19.8653 6.69758 19.7998L8.2019 19.6009Z" stroke="#EB1D5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Гарантия возврата средств</span>
+                    </h3>
+                    <a href="#" class="d-flex align-items-center justify-content-center btn_rose">
+                        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 9L10.5 12L20.5 2M14.5 1H6.3C4.61984 1 3.77976 1 3.13803 1.32698C2.57354 1.6146 2.1146 2.07354 1.82698 2.63803C1.5 3.27976 1.5 4.11984 1.5 5.8V14.2C1.5 15.8802 1.5 16.7202 1.82698 17.362C2.1146 17.9265 2.57354 18.3854 3.13803 18.673C3.77976 19 4.61984 19 6.3 19H14.7C16.3802 19 17.2202 19 17.862 18.673C18.4265 18.3854 18.8854 17.9265 19.173 17.362C19.5 16.7202 19.5 15.8802 19.5 14.2V10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Присоединиться</span>
+                    </a>
+                    <ul class="d-flex align-items-center download_link">
+                        <li>
+                            <a href="#" class="d-flex align-items-center justify-content-center btn_light_border">
+                                <img src="./images/app_store.svg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="d-flex align-items-center justify-content-center btn_light_border">
+                                <img src="./images/google_play.svg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="d-flex align-items-stretch w-100 home__card">
+                    <li class="home__card_item border_gradient text-center">
+                        <img src="./images/home_card_1.png" alt="">
+                        <h4>
+                            <span>БЕЗОПАСНОСТЬ</span>
+                        </h4>
+                        <p>Весь ваш интернет траффик будетшифроваться, все ваши данные будутнедоступны третьим лицам</p>
+                    </li>
+                    <li class="home__card_item border_gradient text-center">
+                        <img src="./images/home_card_1.png" alt="">
+                        <h4>
+                            <span>КОНФИДЕНЦИАЛЬНОСТЬ</span>
+                        </h4>
+                        <p>Мы не ведем логов и не сохраняемисторию вашего интернет серфинга. Мыне передаем информацию опользователях абсолютно никому.</p>
+                    </li>
+                    <li class="home__card_item border_gradient text-center">
+                        <img src="./images/home_card_1.png" alt="">
+                        <h4>
+                            <span>ТЕХНОЛОГИЧНОСТЬ</span>
+                        </h4>
+                        <p>Мы не используем устаревшие протоколы (openvpn, wireguard и т.д.), а применяем только самые современные решения, в том числе используем собственные разработки без ущерба скорости соединения.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Home end -->
+
+        <!-- Ease use -->
+        <section class="ease_use">
+            <div class="main_container">
+                <h2 class="sec_title ease_use__title">
+                    <span>ПРОСТОТА ИСПОЛЬЗОВАНИЯ В ОДНО НАЖАТИЕ</span>
+                </h2>
+                <div class="d-flex justify-content-between align-items-center ease_use__slider">
+                    <button class="border_gradient ease_use__slider_prev">
+                        <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.25 1.5L1.75 10L10.25 18.5M10.25 10H10.2642" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./images/ease_use_card_1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/ease_use_card_2.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/ease_use_card_3.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/ease_use_card_4.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/ease_use_card_5.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/ease_use_card_1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/ease_use_card_2.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/ease_use_card_3.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/ease_use_card_4.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/ease_use_card_5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="border_gradient ease_use__slider_next">
+                        <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.75 1.5L10.25 10L1.75 18.5M1.75 10H1.73583" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Ease use end -->
+
+    </div>
+
+
+    <!-- Swiper JS link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JS file -->
+    <script src="./js/main.js"></script>
+</body>
+</html>

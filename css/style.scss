@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+$color-black-1: #080808;
+$color-black-2: #161616;
+$color-rose: #EB1D5B;
+$color-white: #FFFFFF;
+$color-blue: #9FCCD4;
+$color-purple-1: #42366D;
+$color-purple-2: #4A2475;
+$color-purple-3: #321954;
+$color-gray: #828282;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, ol, dl {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a, span {
+    display: inline-block;
+    text-decoration: none;
+    color:  inherit;
+}
+
+button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+input {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+body {
+    font-family: "Onest", sans-serif;
+    font-weight: 400;
+    background: $color-black-1;
+    color: $color-white;
+}
+
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.main {
+    &_container {
+        max-width: 1120px;
+        margin: 0 auto;
+    }
+}
+
+.btn {
+    &_rose {
+        background: $color-rose;
+        height: 48px;
+        border-radius: 6px;
+        font-size: 16px;
+        line-height: 140%;
+        gap: 6px;
+        box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    &_light_border {
+        background: black;
+        height: 48px;
+        border: 1px solid #A6A6A6;
+        border-radius: 6px;
+        padding: 0 11px;
+    }
+}
+
+.sec_title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 140%;
+
+    span {
+        border-bottom: 1px solid $color-rose;
+        padding: 0 10px;
+    }
+}
+
+.border_gradient {
+    position: relative;
+    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 7px;
+
+    &::before {
+        border-radius: 6px;
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid transparent;
+        background: linear-gradient(11deg, #3B3C3E, rgba(0, 0, 0, 0), #3B3C3E) border-box;
+        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+    }
+}
+
+// Header
+.header {
+    top: 30px;
+
+    &__nav {
+        gap: 20px;
+        padding-top: 35px;
+
+        a {
+            font-size: 14px;
+            line-height: 140%;
+            width: 156px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            &.active,
+            &:hover {
+                background: linear-gradient(135.29deg, rgba(20, 0, 255, 0.05) 1.042%,rgba(20, 0, 255, 0) 100%),rgba(255, 255, 255, 0.01);
+
+                &::before {
+                    background: linear-gradient(11deg, #3A2C74, #231563, #BFB1F6) border-box;
+                }
+            }
+        }
+    }
+
+    &__account {
+        &_top {
+            margin-bottom: 10px;
+
+            .account_ip {
+                font-size: 12px;
+                line-height: 140%;
+                color: $color-blue;
+
+                span {
+                    color: $color-white;
+                }
+            }
+        }
+
+
+        &_bottom {
+            gap: 8px;
+            
+            button {
+                height: 40px;
+                color: $color-white;
+                font-size: 14px;
+                line-height: 140%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 0 20px;
+
+                &.auth_btn {
+                    &::before {
+                        background: linear-gradient(11deg, #673344, #451121, #622E3E) border-box;
+                    }
+                }
+            }
+        }
+    }
+}
+// Header end
+
+// Home
+.home {
+    background: url('../images/home_bg.png') center/cover no-repeat;
+    padding-top: 210px;
+
+    .main_container {
+        position: relative;
+    }
+
+    &__phone_img {
+        position: absolute;
+        top: 0;
+        left: -346px;
+    }
+
+    &__content {
+        width: 544px;
+        gap: 52px;
+        margin-bottom: 133px;
+    }
+
+    &__title {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 140%;
+    }
+
+    &__line {
+        height: 4px;
+        width: 100%;
+        border-radius: 2px;
+        background: $color-rose;
+    }
+
+    &__subtitle {
+        color: $color-white;
+        font-size: 24px;
+        line-height: 140%;
+    }
+
+    h3 {
+        color: $color-blue;
+        font-size: 20px;
+        line-height: 140%;
+        gap: 6px;
+    }
+
+    .btn_rose {
+        width: 352px;
+    }
+
+    .download_link {
+        gap: 20px;
+
+        a {
+            width: 165px;
+        }
+    }
+
+    &__card {
+        margin-bottom: 92px;
+        gap: 32px;
+
+        &_item {
+            padding: 24px 16px;
+            width: calc(100% / 3 - 64px / 3);
+
+            &::before {
+                background: linear-gradient(40deg, #3B3C3E, rgba(0, 0, 0, 0), #3B3C3E) border-box;
+            }
+
+            h4 {
+                margin: 24px 0 10px;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 140%;
+
+                span {
+                    border-bottom: 1px solid $color-rose;
+                    padding: 0 10px;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 140%;
+            }
+        }
+    }
+}
+// Home end
+
+.ease_use {
+    &__title {
+        margin-bottom: 52px;
+    }
+
+    &__slider {
+        gap: 20px;
+
+        &_prev,
+        &_next {
+            width: 50px;
+            height: 60px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            background: rgba(17, 8, 44, 0.13),rgba(255, 255, 255, 0.01);
+
+            &::before {
+                background: linear-gradient(40deg, #3B3C3E, rgba(0, 0, 0, 0), #3B3C3E) border-box;
+            }
+        }
+
+        .swiper-slide {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@import 'responsive';
