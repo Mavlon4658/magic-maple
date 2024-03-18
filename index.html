@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/footer_logo.svg" type="image/x-icon">
     <title>Magic-Maple</title>
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Swiper CSS link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- Animate CSS link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- CSS file -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -18,18 +21,18 @@
         <!-- Header -->
         <header class="position-absolute start-0 w-100 header">
             <div class="d-flex align-items-start justify-content-between main_container">
-                <a href="#" class="header__logo">
+                <a href="/" class="header__logo">
                     <img src="./images/header_logo.svg" alt="">
                 </a>
                 <ul class="d-flex align-items-center header__nav">
                     <li>
-                        <a href="#" class="border_gradient">Главная</a>
+                        <a href="/" class="border_gradient active">Главная</a>
                     </li>
                     <li>
-                        <a href="#" class="border_gradient active">FAQ</a>
+                        <a href="./faq.html" class="border_gradient">FAQ</a>
                     </li>
                     <li>
-                        <a href="#" class="border_gradient">О нас</a>
+                        <a href="./about.html" class="border_gradient">О нас</a>
                     </li>
                 </ul>
                 <div class="header__account">
@@ -37,18 +40,35 @@
                         <div class="account_ip">
                             Ваш IP: <span>192.168.32.12</span>
                         </div>
-                        <button>
-                            <img src="./images/flag_ru.png" alt="">
-                        </button>
+                        <div class="switch">
+                            <div class="current">
+                                <img src="./images/flag_ru.png" alt="">
+                                <!-- <span>en</span> -->
+                            </div>
+                            <div class="options">
+                                <ul class="options-list">
+                                    <li data-lang="ru" class="selected">Русский</li>
+                                    <li data-lang="en">English</li>
+                                    <li data-lang="sa">Saudi Arabia</li>
+                                </ul>
+                                <div id="trans-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+                                        <g id="circle" fill="none" fill-rule="evenodd">
+                                            <circle id="bg" cx="60" cy="60" r="60" fill="#FFFFFF"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="d-flex align-items-center header__account_bottom">
-                        <button class="border_gradient auth_btn">
+                        <button class="border_gradient auth_btn register_modal__open">
                             <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.49998 9.21615H4.49998C3.5696 9.21615 3.10442 9.21615 2.72589 9.33097C1.87362 9.58951 1.20667 10.2564 0.948139 11.1087C0.833313 11.4872 0.833313 11.9524 0.833313 12.8828M12.1666 12.8828V8.88281M10.1666 10.8828H14.1666M9.16665 3.88281C9.16665 5.53967 7.8235 6.88281 6.16665 6.88281C4.50979 6.88281 3.16665 5.53967 3.16665 3.88281C3.16665 2.22596 4.50979 0.882812 6.16665 0.882812C7.8235 0.882812 9.16665 2.22596 9.16665 3.88281Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             Регистрация
                         </button>
-                        <button class="border_gradient">
+                        <button class="border_gradient log_in_modal__open">
                             <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.5 0.882812H10.3C11.4201 0.882812 11.9802 0.882812 12.408 1.1008C12.7843 1.29255 13.0903 1.59851 13.282 1.97483C13.5 2.40265 13.5 2.96271 13.5 4.08281V9.68281C13.5 10.8029 13.5 11.363 13.282 11.7908C13.0903 12.1671 12.7843 12.4731 12.408 12.6648C11.9802 12.8828 11.4201 12.8828 10.3 12.8828H9.5M6.16667 3.54948L9.5 6.88281M9.5 6.88281L6.16667 10.2161M9.5 6.88281L1.5 6.88281" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -60,8 +80,76 @@
         </header>
         <!-- Header end -->
 
+        <!-- Auth modal -->
+        <!-- Registration -->
+        <div class="auth_modal register_modal">
+            <div class="auth_modal__bg"></div>
+            <form class="auth_modal__content animate__animated">
+                <button type="button" class="border_gradient auth_modal__close">
+                    <img src="./images/close_icon.svg" alt="">
+                </button>
+                <h2 class="auth_modal__title">РЕГИСТРАЦИЯ</h2>
+                <div class="d-flex flex-column align-items-center auth_modal__inputs">
+                    <div class="main_input">
+                        <img src="./images/phone_icon.svg" alt="" class="main_input__icon">
+                        <input type="tel" placeholder="Введите номер телефона*">
+                    </div>
+                    <div class="main_input">
+                        <img src="./images/parol_icon.svg" alt="" class="main_input__icon">
+                        <input type="password" placeholder="Ваш пароль">
+                    </div>
+                    <div class="main_input">
+                        <img src="./images/parol_icon.svg" alt="" class="main_input__icon">
+                        <input type="password" placeholder="Повторите пароль">
+                    </div>
+                </div>
+                <div class="auth_modal__bottom">
+                    <button type="submit" class="d-flex align-items-center justify-content-center btn_rose">Зарегистрироваться</button>
+                    <p>
+                        <a href="#">Условия использования</a>
+                        и
+                        <a href="#">Политика конфиденциальности.</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <!-- Registration end -->
+
+        <!-- Log in -->
+        <div class="auth_modal log_in_modal">
+            <div class="auth_modal__bg"></div>
+            <form class="auth_modal__content animate__animated">
+                <button type="button" class="border_gradient auth_modal__close">
+                    <img src="./images/close_icon.svg" alt="">
+                </button>
+                <h2 class="auth_modal__title">АВТОРИЗАЦИЯ</h2>
+                <div class="d-flex flex-column align-items-center auth_modal__inputs">
+                    <div class="main_input">
+                        <img src="./images/phone_icon.svg" alt="" class="main_input__icon">
+                        <input type="tel" placeholder="Введите номер телефона*">
+                    </div>
+                    <div class="main_input">
+                        <img src="./images/parol_icon.svg" alt="" class="main_input__icon">
+                        <input type="password" placeholder="Ваш пароль">
+                    </div>
+                    <a href="#">Забыли пароль?</a>
+                </div>
+                <div class="auth_modal__bottom">
+                    <button type="submit" class="d-flex align-items-center justify-content-center btn_rose">Войти</button>
+                    <p>
+                        <a href="#">Условия использования</a>
+                        и
+                        <a href="#">Политика конфиденциальности.</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <!-- Log in end -->
+        <!-- Auth modal end -->
+
         <!-- Home -->
         <section class="home">
+            <img src="./images/home_bg.png" alt="" class="home__bg">
             <div class="d-flex flex-column align-items-end main_container">
                 <img src="./images/home_phone.png" class="home__phone_img" alt="">
                 <div class="d-flex flex-column align-items-start home__content">
@@ -125,6 +213,7 @@
 
         <!-- Ease use -->
         <section class="ease_use">
+            <img src="./images/ease_use_bg.png" alt="" class="ease_use__bg">
             <div class="main_container">
                 <h2 class="sec_title ease_use__title">
                     <span>ПРОСТОТА ИСПОЛЬЗОВАНИЯ В ОДНО НАЖАТИЕ</span>
@@ -179,8 +268,199 @@
         </section>
         <!-- Ease use end -->
 
-    </div>
+        <!-- Tarif -->
+        <section class="tarif">
+            <div class="main_container">
+                <h2 class="sec_title tarif__title">
+                    <span>ТАРИФЫ</span>
+                </h2>
+                <div class="swiper tarif__slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide text-center border_gradient tarif__slider_item">
+                            <h4 class="sec_title tarif__slider_title">
+                                <span>Базовый</span>
+                            </h4>
+                            <h5 class="tarif__slider_subtitle">1 месяц</h5>
+                            <h3 class="tarif__slider_price">4.99$/мес</h3>
+                            <div class="benefit">
+                                <span class="benefit_text">
+                                    ВЫГОДА
+                                    <span class="protsent">0%</span>
+                                </span>
+                            </div>
+                            <a href="#" class="d-flex align-items-center justify-content-center btn_rose">Подключить</a>
+                        </div>
+                        <div class="swiper-slide text-center border_gradient tarif__slider_item">
+                            <h4 class="sec_title tarif__slider_title">
+                                <span>Стандарт</span>
+                            </h4>
+                            <h5 class="tarif__slider_subtitle">6 месяц</h5>
+                            <h3 class="tarif__slider_price">3.99$/мес</h3>
+                            <div class="benefit">
+                                <span class="benefit_text">
+                                    ВЫГОДА
+                                    <span class="protsent">20%</span>
+                                </span>
+                            </div>
+                            <a href="#" class="d-flex align-items-center justify-content-center btn_rose">Подключить</a>
+                        </div>
+                        <div class="swiper-slide text-center border_gradient tarif__slider_item">
+                            <h4 class="sec_title tarif__slider_title">
+                                <span>Премиум</span>
+                            </h4>
+                            <h5 class="tarif__slider_subtitle">12 месяц</h5>
+                            <h3 class="tarif__slider_price">2.99$/мес</h3>
+                            <div class="benefit">
+                                <span class="benefit_text">
+                                    ВЫГОДА
+                                    <span class="protsent">40%</span>
+                                </span>
+                            </div>
+                            <a href="#" class="d-flex align-items-center justify-content-center btn_rose">Подключить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tarif end -->
 
+        <!-- Quality -->
+        <section class="quality">
+            <img src="./images/quality_bg.png" alt="" class="quality__bg">
+            <div class="main_container">
+                <div class="d-flex align-items-start flex-row-reverse quality__top">
+                    <img src="./images/quality_phone.png" alt="" class="quality__phone">
+                    <div class="quality__content">
+                        <h2 class="sec_title quality__title">
+                            <span>Работаем на качество, <br> а не на количество </span>
+                        </h2>
+                        <p class="quality__description">
+                            Для пользователей доступно оптимальное количество серверов (Европа, Азия, США, Южная Америка). Используя собственные разработки, мы стараемся содержать качественные сервера с высокими техническими характеристиками и высокой скоростью соединения. В отличии от конкурентов, мы не стараемся развивать сотни серверов низкого качества. 
+                            <br><br>
+                            Magic Maple VPN возможно использовать даже в тех странах, где работает глобальный фаервол и где операторы связи отслеживают VPN Пакеты и производят блокировки на уровне сервисов VPN.
+                        </p>
+                        <ul class="d-flex align-items-center download_link">
+                            <li>
+                                <a href="#" class="d-flex align-items-center justify-content-center btn_light_border">
+                                    <img src="./images/app_store.svg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex align-items-center justify-content-center btn_light_border">
+                                    <img src="./images/google_play.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper quality__list">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="swiper-slide text-center border_gradient quality__list_item">
+                                <img src="./images/quality_card_1.svg" alt="">
+                                <span class="quality__list_item__line"></span>
+                                <h3>Безлимитный траффик</h3>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="swiper-slide text-center border_gradient quality__list_item">
+                                <img src="./images/quality_card_2.svg" alt="">
+                                <span class="quality__list_item__line"></span>
+                                <h3>Высокая скорость соединения <br> (до 10 Гб/сек.)</h3>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="swiper-slide text-center border_gradient quality__list_item">
+                                <img src="./images/quality_card_3.svg" alt="">
+                                <span class="quality__list_item__line"></span>
+                                <h3>Абсолютная конфеденциальность</h3>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="swiper-slide text-center border_gradient quality__list_item">
+                                <img src="./images/quality_card_4.svg" alt="">
+                                <span class="quality__list_item__line"></span>
+                                <h3>Применение уникальных разработок (на основе VLESS/VMESS)</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Quality end -->
+
+        <!-- Have question -->
+        <section class="have_question">
+            <div class="main_container">
+                <h2 class="sec_title have_question__title">
+                    <span>ОСТАЛИСЬ ВОПРОСЫ?</span>
+                </h2>
+                <h3 class="text-center have_question__subtitle"> Напишите нам и мы поможем разобраться </h3>
+                <div class="d-flex align-items-center justify-content-center">
+                    <a href="#" class="border_gradient d-flex align-items-center justify-content-center">
+                        <img src="./images/mail_icon.svg" alt="">
+                        <span>support@mmconnect.pro</span>
+                    </a>
+                    <span class="have_question__link_text">ИЛИ</span>
+                    <a href="#" class="border_gradient d-flex align-items-center justify-content-center">
+                        <img src="./images/telegram_icon.svg" alt="">
+                        <span>@mmconnect</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Have question end -->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="main_container d-flex align-items-center justify-content-between">
+                <img src="./images/footer_bg.png" alt="" class="footer__bg">
+                <div class="d-flex align-items-center footer__logo">
+                    <a href="/">
+                        <img src="./images/footer_logo.svg" alt="">
+                    </a>
+                    <span>2024 SkyAnvil Group OÜ . Все права защищены. </span>
+                </div>
+                <ul class="d-flex align-items-center footer__navs">
+                    <li>
+                        <a href="#">Политика конфиденциальности</a>
+                    </li>
+                    <li class="footer__navs_line"></li>
+                    <li>
+                        <a href="#" class="active">Условия использования</a>
+                    </li>
+                    <li class="footer__navs_line"></li>
+                    <li>
+                        <a href="#">О нас</a>
+                    </li>
+                </ul>
+                <ul class="d-flex align-items-center footer__contact">
+                    <li>
+                        <a href="#">
+                            <img src="./images/footer_contact_1.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/footer_contact_2.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/footer_contact_3.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/footer_contact_4.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <!-- Footer end -->
+
+    </div>
 
     <!-- Swiper JS link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
