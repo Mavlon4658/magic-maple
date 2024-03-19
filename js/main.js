@@ -48,6 +48,20 @@ if (modal_close.length) {
     })
 }
 
+let mobile_menu = document.querySelector('.mobile_menu')
+let menu_open = document.querySelector('.header__bars');
+let menu_close = document.querySelector('.mobile_menu__bars');
+let body = document.querySelector('body')
+
+menu_open.onclick = () => {
+    mobile_menu.style.display = 'flex';
+    body.style.overflow = 'hidden'
+}
+menu_close.onclick = () => {
+    mobile_menu.style.display = 'none';
+    body.style.overflow = 'visible'
+}
+
 let el = document.querySelector('.switch');
 let cur = el.querySelector('.current');
 let options = el.querySelectorAll('.options li');
@@ -91,32 +105,88 @@ options.forEach(option => {
 });
 
 let use_slider = new Swiper('.ease_use__slider .swiper', {
-    slidesPerView: 3.5,
+    slidesPerView: 1.2,
     loop: true,
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
     coverflowEffect: {
         rotate: 0,
-        stretch: 0,
-        depth: 100,
-        modifier: 2.6
+        stretch: 50,
+        depth: 25,
+        modifier: 5
     },
     spaceBetween: -60,
     navigation: {
         nextEl: '.ease_use__slider_next',
         prevEl: '.ease_use__slider_prev'
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 3.5,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2.6
+            },
+        },
+        630: {
+            slidesPerView: 2,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 35,
+                depth: 100,
+                modifier: 5
+            },
+        },
+        520: {
+            slidesPerView: 2,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 45,
+                depth: 25,
+                modifier: 5
+            },
+        },
+        440: {
+            slidesPerView: 1.5,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 50,
+                depth: 25,
+                modifier: 5
+            },
+        },
+        390: {
+            slidesPerView: 1.3,
+        }
     }
 })
 
 let tarif_slider = new Swiper('.tarif__slider', {
-    slidesPerView: 3,
-    spaceBetween: 32
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 32,
+        },
+        380: {
+            slidesPerView: 'auto',
+        }
+    }
 })
 
 let quality_slider = new Swiper('.quality__list', {
-    slidesPerView: 4,
-    spaceBetween: 32,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    breakpoints: {
+        992: {
+            slidesPerView: 4,
+            spaceBetween: 32,
+        }
+    }
 })
 
 const items = document.querySelectorAll('.faq__list_item');
@@ -133,7 +203,15 @@ items.forEach((item) => {
 });
 
 let about_slider = new Swiper('.about__bottom', {
-    slidesPerView: 3,
-    spaceBetween: 32,
-    
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 32,
+        },
+        380: {
+            slidesPerView: 'auto'
+        }
+    }
 })

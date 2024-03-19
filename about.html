@@ -20,11 +20,11 @@
 
         <!-- Header -->
         <header class="position-absolute start-0 w-100 header">
-            <div class="d-flex align-items-start justify-content-between main_container">
+            <div class="d-flex align-items-center align-lg-items-start justify-content-between main_container">
                 <a href="/" class="header__logo">
                     <img src="./images/header_logo.svg" alt="">
                 </a>
-                <ul class="d-flex align-items-center header__nav">
+                <ul class="d-none d-lg-flex align-items-center header__nav">
                     <li>
                         <a href="/" class="border_gradient">Главная</a>
                     </li>
@@ -43,7 +43,6 @@
                         <div class="switch">
                             <div class="current">
                                 <img src="./images/flag_ru.png" alt="">
-                                <!-- <span>en</span> -->
                             </div>
                             <div class="options">
                                 <ul class="options-list">
@@ -60,8 +59,11 @@
                                 </div>
                             </div>
                         </div>
+                        <button class="border_gradient d-lg-none header__bars">
+                            <img src="./images/bars.svg" alt="">
+                        </button>
                     </div>
-                    <div class="d-flex align-items-center header__account_bottom">
+                    <div class="d-none d-lg-flex align-items-center header__account_bottom">
                         <button class="border_gradient auth_btn register_modal__open">
                             <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.49998 9.21615H4.49998C3.5696 9.21615 3.10442 9.21615 2.72589 9.33097C1.87362 9.58951 1.20667 10.2564 0.948139 11.1087C0.833313 11.4872 0.833313 11.9524 0.833313 12.8828M12.1666 12.8828V8.88281M10.1666 10.8828H14.1666M9.16665 3.88281C9.16665 5.53967 7.8235 6.88281 6.16665 6.88281C4.50979 6.88281 3.16665 5.53967 3.16665 3.88281C3.16665 2.22596 4.50979 0.882812 6.16665 0.882812C7.8235 0.882812 9.16665 2.22596 9.16665 3.88281Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -79,6 +81,41 @@
             </div>
         </header>
         <!-- Header end -->
+
+        <!-- Mobile menu -->
+        <section class="mobile_menu">
+            <button class="border_gradient d-lg-none mobile_menu__bars">
+                <img src="./images/bars.svg" alt="">
+            </button>
+            <ul class="d-flex flex-column">
+                <li>
+                    <a href="/" class="border_gradient">Главная</a>
+                </li>
+                <li>
+                    <a href="./faq.html" class="border_gradient">FAQ</a>
+                </li>
+                <li>
+                    <a href="./about.html" class="border_gradient active">О нас</a>
+                </li>
+                <li>
+                    <button class="border_gradient auth_btn register_modal__open">
+                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.49998 9.21615H4.49998C3.5696 9.21615 3.10442 9.21615 2.72589 9.33097C1.87362 9.58951 1.20667 10.2564 0.948139 11.1087C0.833313 11.4872 0.833313 11.9524 0.833313 12.8828M12.1666 12.8828V8.88281M10.1666 10.8828H14.1666M9.16665 3.88281C9.16665 5.53967 7.8235 6.88281 6.16665 6.88281C4.50979 6.88281 3.16665 5.53967 3.16665 3.88281C3.16665 2.22596 4.50979 0.882812 6.16665 0.882812C7.8235 0.882812 9.16665 2.22596 9.16665 3.88281Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Регистрация
+                    </button>
+                </li>
+                <li>
+                    <button class="border_gradient log_in_modal__open">
+                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.5 0.882812H10.3C11.4201 0.882812 11.9802 0.882812 12.408 1.1008C12.7843 1.29255 13.0903 1.59851 13.282 1.97483C13.5 2.40265 13.5 2.96271 13.5 4.08281V9.68281C13.5 10.8029 13.5 11.363 13.282 11.7908C13.0903 12.1671 12.7843 12.4731 12.408 12.6648C11.9802 12.8828 11.4201 12.8828 10.3 12.8828H9.5M6.16667 3.54948L9.5 6.88281M9.5 6.88281L6.16667 10.2161M9.5 6.88281L1.5 6.88281" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Войти
+                    </button>
+                </li>
+            </ul>
+        </section>
+        <!-- Mobile menu end -->
 
         <!-- Auth modal -->
         <!-- Registration -->
@@ -156,7 +193,7 @@
                 </h2>
                 <div class="about__top">
                     <p class="about__description">Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют определения и уточнения дальнейших направлений развития. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. <br> Повседневная практика показывает, что начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации форм развития. Задача организации, в особенности же укрепление и развитие структуры способствует подготовки и реализации соответствующий условий активизации. Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции требуют от нас анализа новых предложений. Идейные соображения высшего порядка, а также сложившаяся структура организации способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.</p>
-                    <div class="about__top_content">
+                    <div class="d-flex d-lg-block flex-column-reverse about__top_content">
                         <div class="about__top_content__left">
                             <p class="about__description">Не следует, однако забывать, что новая модель организационной деятельности в значительной степени обуславливает создание модели развития. Таким образом постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки систем массового участия. Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание направлений прогрессивного развития.</p>
                             <p class="about__description">Таким образом укрепление и развитие структуры позволяет оценить значение направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности влечет за собой процесс внедрения и модернизации систем массового участия. <br>Идейные соображения высшего порядка, а также новая модель организационной деятельности способствует подготовки и реализации дальнейших направлений развития. Не следует, однако забывать, что дальнейшее развитие различных форм деятельности позволяет выполнять важные задания по разработке соответствующий условий активизации. Идейные соображения высшего порядка, а также консультация с широким активом требуют от нас анализа модели развития.</p>
@@ -218,7 +255,7 @@
                     <span>ОСТАЛИСЬ ВОПРОСЫ?</span>
                 </h2>
                 <h3 class="text-center have_question__subtitle"> Напишите нам и мы поможем разобраться </h3>
-                <div class="d-flex align-items-center justify-content-center">
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center have_question__link">
                     <a href="#" class="border_gradient d-flex align-items-center justify-content-center">
                         <img src="./images/mail_icon.svg" alt="">
                         <span>support@mmconnect.pro</span>
@@ -235,28 +272,28 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="main_container d-flex align-items-center justify-content-between">
+            <div class="main_container flex-wrap d-flex align-items-center justify-content-center justify-content-lg-between">
                 <img src="./images/footer_bg.png" alt="" class="footer__bg">
-                <div class="d-flex align-items-center footer__logo">
+                <div class="d-flex order-1 order-lg-1 align-items-center footer__logo">
                     <a href="/">
                         <img src="./images/footer_logo.svg" alt="">
                     </a>
-                    <span>2024 SkyAnvil Group OÜ . Все права защищены. </span>
+                    <span>2024 SkyAnvil Group OÜ . <br class="d-lg-none"> Все права защищены. </span>
                 </div>
-                <ul class="d-flex align-items-center footer__navs">
+                <ul class="d-flex flex-column flex-lg-row order-3 order-lg-2 align-items-center footer__navs">
                     <li>
                         <a href="#">Политика конфиденциальности</a>
                     </li>
-                    <li class="footer__navs_line"></li>
+                    <li class="d-none d-lg-block footer__navs_line"></li>
                     <li>
                         <a href="#" class="active">Условия использования</a>
                     </li>
-                    <li class="footer__navs_line"></li>
+                    <li class="d-none d-lg-block footer__navs_line"></li>
                     <li>
                         <a href="#">О нас</a>
                     </li>
                 </ul>
-                <ul class="d-flex align-items-center footer__contact">
+                <ul class="d-flex order-2 order-lg-3 align-items-center footer__contact">
                     <li>
                         <a href="#">
                             <img src="./images/footer_contact_1.svg" alt="">
