@@ -1300,6 +1300,11 @@ body {
   transform: translateX(-50%);
   z-index: -1;
 }
+@media screen and (max-width: 768px) {
+  .account__bg {
+    width: 1240px;
+  }
+}
 .account__title {
   margin-bottom: 30px;
 }
