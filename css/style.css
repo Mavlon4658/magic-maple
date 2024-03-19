@@ -197,6 +197,14 @@ body {
 .header__account_bottom button.auth_btn::before {
   background: linear-gradient(11deg, #673344, #451121, #622E3E) border-box;
 }
+.header__account_bottom .user {
+  font-size: 14px;
+  line-height: 140%;
+  margin-right: 24px;
+}
+.header__account_bottom .user span {
+  color: #EB1D5B;
+}
 .header__bars {
   width: 40px;
   height: 40px;
